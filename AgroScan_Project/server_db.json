@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": "usr-farmer-1",
+      "name": "Ramesh Singh",
+      "role": "Farm Manager",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      "farmName": "Green Valley Farms",
+      "region": "Mohali, Punjab",
+      "email": "ramesh.singh@agroscan.io"
+    },
+    {
+      "id": "usr-1787745880205-h6ml",
+      "name": "Gurpreet Singh",
+      "email": "test.farmer.1024@agroscan.io",
+      "phone": "",
+      "farmName": "Punjab Agri Pioneer Farms",
+      "role": "Farm Manager",
+      "avatar": "👨‍🌾",
+      "passwordHash": "991ce859e71ad30e7682a2598e56d954d4cae147465f3a0dfb6bdf97c11233b69fbb992f543b6f2df5c7c05b988edbfe86a2c662a2bc848c99206075c66e531b",
+      "passwordSalt": "f494b0f02ebc6eab02cddebc3199c53a",
+      "loginType": "Email & Password",
+      "createdAt": "2026-08-26T12:04:40.205Z"
+    },
+    {
+      "id": "usr-google-1787745888398",
+      "name": "Alex Rivera",
+      "email": "alex.rivera@agroscan.io",
+      "phone": "",
+      "farmName": "Google Workspace Farm",
+      "role": "Verified Farm Manager",
+      "avatar": "👩‍🌾",
+      "passwordHash": "a5c647e72e7272dbb9a7653516635c75f7119d88f84f42049ba14430f40abce5675f96f7279de0b6aad869764077b1c29edc8520cc3a9ddaca6e97dd1592aa80",
+      "passwordSalt": "58bff03cdd501a4746c91ced40d19353",
+      "loginType": "Google Account (OAuth 2.0)",
+      "createdAt": "2026-08-26T12:04:48.398Z"
+    },
+    {
+      "id": "usr-phone-1787745944560",
+      "name": "Sukhwinder Singh",
+      "email": "919876543210@mobile.agroscan.io",
+      "phone": "+919876543210",
+      "farmName": "Mobile Verified Farm",
+      "role": "Verified Farmer",
+      "avatar": "👨‍🌾",
+      "passwordHash": "e6cf8498dfb12bfbbdd13d0ce67e98901051ef1a4aa40c7417f0b022f60632b0d7c28df268a91aab2b9a5c5743e27157de132cc4d21d362ea04258259c8c63f9",
+      "passwordSalt": "647c520b84f7f9a3e00a8d16bd550fe5",
+      "loginType": "Mobile SMS OTP",
+      "createdAt": "2026-08-26T12:05:44.560Z"
+    },
+    {
+      "id": "usr-email-1787837431993",
+      "name": "kartik333malhotra",
+      "email": "kartik333malhotra@gmail.com",
+      "phone": "",
+      "farmName": "Verified Eco-Farm",
+      "role": "Verified Farmer",
+      "avatar": "👩‍🌾",
+      "passwordHash": "abba2205b293375528dc9703ce6a004de31b42ec017998821cbb7bd87f8eccf3ae52b86522ba6c204161104b88e94ff30534b9337de583ca8585f92ae9fbcde4",
+      "passwordSalt": "c79339655ce77f90c8f990d9c33d025c",
+      "loginType": "Email OTP Verification",
+      "createdAt": "2026-08-27T13:30:31.993Z"
+    }
+  ],
+  "telemetryLogs": [],
+  "diagnosticReports": [],
+  "communityPosts": [],
+  "otps": {}
+}

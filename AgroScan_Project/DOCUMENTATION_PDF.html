@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AgroScan Sentinel — Full-Stack Technical Documentation & Architecture Manual</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 16mm 14mm 16mm 14mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.5;
+    font-size: 9pt;
+  }
+
+  .cover-card {
+    background: linear-gradient(135deg, #0c2113 0%, #183c23 60%, #1e482a 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 24px 22px;
+    margin-bottom: 18px;
+    border: 1px solid #285f35;
+  }
+
+  .cover-tag {
+    display: inline-block;
+    background: rgba(52, 211, 153, 0.2);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    color: #6ee7b7;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    font-size: 9.5pt;
+    color: #a7f3d0;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 7.5pt;
+  }
+
+  .meta-label {
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .meta-value {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 12pt;
+    font-weight: 800;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #183c23;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 7px;
+    color: #334155;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 8pt;
+    page-break-inside: avoid;
+  }
+
+  th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    text-align: left;
+    padding: 7px 9px;
+    font-weight: 700;
+    border-top: 1px solid #cbd5e1;
+    border-bottom: 2px solid #cbd5e1;
+    text-transform: uppercase;
+    font-size: 7pt;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 6px 9px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 700;
+  }
+
+  .badge-forest {
+    background: #e2f2e6;
+    color: #183c23;
+    border: 1px solid #bfe3c7;
+  }
+
+  .badge-emerald {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+  }
+
+  .badge-blue {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+  }
+
+  .code-block {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 8px 0 12px 0;
+    line-height: 1.4;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 8px 0;
+    page-break-inside: avoid;
+  }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .card-title {
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #0f172a;
+    margin-bottom: 3px;
+  }
+
+  .card-desc {
+    font-size: 7.5pt;
+    color: #64748b;
+    line-height: 1.35;
+  }
+
+  ul {
+    margin-left: 16px;
+    margin-bottom: 8px;
+    color: #334155;
+  }
+
+  li {
+    margin-bottom: 2px;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+  <!-- COVER / HERO BANNER -->
+  <div class="cover-card">
+    <div class="cover-tag">🌿 Precision Agriculture Engineering Document</div>
+    <h1>AgroScan Sentinel Platform</h1>
+    <div class="subtitle">
+      Full-Stack Technical Architecture, Framework Specifications, Database Design, Neural Diagnostics & System Build Manual
+    </div>
+
+    <div class="meta-grid">
+      <div>
+        <span class="meta-label">System Version</span>
+        <span class="meta-value">v2.4.0 (Enterprise)</span>
+      </div>
+      <div>
+        <span class="meta-label">Frontend Stack</span>
+        <span class="meta-value">React 18 + Vite 5 + Tailwind</span>
+      </div>
+      <div>
+        <span class="meta-label">Backend Stack</span>
+        <span class="meta-value">Node.js + Express REST</span>
+      </div>
+      <div>
+        <span class="meta-label">Database Model</span>
+        <span class="meta-value">Hybrid Document DB + Mongo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: EXECUTIVE SUMMARY -->
+  <h2>1. Executive Summary & Core Capabilities</h2>
+  <p>
+    <strong>AgroScan Sentinel</strong> is an advanced AI-powered Agricultural Decision Support System (DSS) engineered to deliver real-time crop disease diagnosis, multispectral leaf pathology classification, IoT sensor microclimate telemetry, GPS geospatial outbreak mapping, and agronomist consultation dispatching.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🔬 Neural Leaf Diagnostic Scanner</div>
+      <div class="card-desc">Simulated deep learning foliar analysis classifying phytopathogens against 45,000+ botanical models with localized lesion bounding boxes and severity indexing.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📍 Live GPS Geospatial Sentinel</div>
+      <div class="card-desc">HTML5 browser geolocation + dual reverse geocoding resolving exact farm area names with layered cartography (Standard, Satellite Earth, NDVI vegetation canopy).</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔐 Dual-Method Authentication Gateway</div>
+      <div class="card-desc">1-Click Google Workspace (Gmail) SSO and Mobile Phone Number + SMS 4-Digit OTP verification with strict scanner access gating.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌓 Animated Daylight / Dark Mode</div>
+      <div class="card-desc">Smooth 180° animated spin theme toggle between high-contrast Daylight Mode (☀️) and deep obsidian Dark Sentinel Mode (🌙).</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: TECHNOLOGY STACK -->
+  <h2>2. Comprehensive Technology Stack & Frameworks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer / Subsystem</th>
+        <th>Technology</th>
+        <th>Version</th>
+        <th>Description & Technical Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend Core</strong></td>
+        <td><span class="badge badge-blue">React</span></td>
+        <td><code>18.3.1</code></td>
+        <td>Single Page Application (SPA) reactive UI components, hooks (<code>useState</code>, <code>useEffect</code>, <code>useMemo</code>, <code>useRef</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Bundler & Dev Server</strong></td>
+        <td><span class="badge badge-blue">Vite</span></td>
+        <td><code>5.4.21</code></td>
+        <td>High-speed Hot Module Replacement (HMR), ES module compilation, and Rollup production bundling.</td>
+      </tr>
+      <tr>
+        <td><strong>Styling & CSS</strong></td>
+        <td><span class="badge badge-emerald">Tailwind CSS</span></td>
+        <td><code>3.4.17</code></td>
+        <td>Utility-first CSS engine with custom botanical color palettes (<code>forest</code>, <code>agri</code>), glassmorphism, and dark mode class strategy.</td>
+      </tr>
+      <tr>
+        <td><strong>CSS Processing</strong></td>
+        <td><span class="badge badge-emerald">PostCSS / Autoprefixer</span></td>
+        <td><code>8.4.49</code></td>
+        <td>Automated CSS transformation pipeline with vendor prefixing.</td>
+      </tr>
+      <tr>
+        <td><strong>Iconography</strong></td>
+        <td><span class="badge badge-forest">Lucide React</span></td>
+        <td><code>0.468.0</code></td>
+        <td>Featherweight, tree-shakeable SVG icon components.</td>
+      </tr>
+      <tr>
+        <td><strong>Backend Runtime</strong></td>
+        <td><span class="badge badge-forest">Node.js</span></td>
+        <td><code>18+</code></td>
+        <td>High-performance asynchronous JavaScript server runtime using native ES module syntax (<code>import/export</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Server Framework</strong></td>
+        <td><span class="badge badge-forest">Express.js</span></td>
+        <td><code>4.21.2</code></td>
+        <td>REST API microservice architecture, CORS negotiation, body parsing, and streaming file downloads.</td>
+      </tr>
+      <tr>
+        <td><strong>Database (Local)</strong></td>
+        <td><span class="badge badge-emerald">JSON Document DB</span></td>
+        <td>Native</td>
+        <td>Atomic, file-persisted JSON document store (<code>server_db.json</code>) requiring zero external setup.</td>
+      </tr>
+      <tr>
+        <td><strong>Database (Cloud)</strong></td>
+        <td><span class="badge badge-emerald">MongoDB + Mongoose</span></td>
+        <td><code>8.9.0</code></td>
+        <td>Object Data Modeling (ODM) layer providing schema validation and cluster connectivity.</td>
+      </tr>
+      <tr>
+        <td><strong>Cartography & GIS</strong></td>
+        <td><span class="badge badge-blue">OpenStreetMap</span></td>
+        <td>Tile Layer API</td>
+        <td>Interactive satellite, street, and NDVI vegetation index map layers.</td>
+      </tr>
+      <tr>
+        <td><strong>Reverse Geocoding</strong></td>
+        <td><span class="badge badge-blue">Nominatim & BigDataCloud</span></td>
+        <td>Open APIs</td>
+        <td>Resolves latitude/longitude coordinates into real-time Area, City, State, and Country names.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 3: SYSTEM ARCHITECTURE & DATA FLOW -->
+  <h2>3. System Architecture & Data Flow</h2>
+  <p>The platform follows a modular client-server decoupled architecture designed for high availability, offline capability, and low latency:</p>
+
+  <div class="code-block">[ CLIENT SPA (React 18 + Vite) ]
+  ├── UI Views: Dashboard, Analysis Report, Field Map, Crop Encyclopedia, Community Hub
+  ├── Security & Auth: Gmail SSO & Mobile SMS OTP Gate
+  ├── Geolocation Engine: HTML5 Navigator GPS + Nominatim Geocoder
+  └── State Manager: agroscanStore.js (LocalStorage Reactive Store)
+       ↕ (HTTP REST / JSON over Port 5000)
+[ BACKEND SERVER (Node.js + Express) ]
+  ├── Auth Controller: /api/auth/login, /api/auth/register
+  ├── Neural AI Scan Engine: /api/scan (Multispectral classification simulation)
+  ├── Telemetry & Sensor Pipeline: /api/sensors, /api/sensors/update
+  ├── Outbreak Notification Dispatcher: /api/alerts
+  └── Distribution Service: /api/download-zip (Live ZIP distribution)
+       ↕
+[ HYBRID DATABASE ROUTER ]
+  ├── Primary File Store: server_db.json (Zero-Setup Portability)
+  └── Cluster Store: MongoDB Atlas / Local via Mongoose ODM</div>
+
+  <!-- SECTION 4: CORE FUNCTIONAL MODULES -->
+  <h2>4. Core Functional Modules Deep-Dive</h2>
+
+  <h3>4.1. AI Leaf Diagnostic Scanner (QuickScanModal.jsx & AnalysisReportScreen.jsx)</h3>
+  <ul>
+    <li><strong>Specimen Ingestion:</strong> Supports high-definition photo upload, live camera feed, or calibrated field specimens.</li>
+    <li><strong>Neural Inference Simulation:</strong> Computes foliar chlorophyll spectral bands, lesion density, and pattern matches against 45,000+ pathogen models.</li>
+    <li><strong>Lesion Bounding Boxes:</strong> Overlays color-coded bounding boxes highlighting primary necrotic lesions and spore clusters with confidence percentages (e.g. 98.4%).</li>
+    <li><strong>Prescriptive Action Guides:</strong> Generates multi-step systemic chemical fungicide sprays, organic soil amendments, and perimeter quarantine instructions.</li>
+  </ul>
+
+  <h3>4.2. Live GPS Geospatial Field Sentinel (FieldMapScreen.jsx)</h3>
+  <ul>
+    <li><strong>Browser GPS Geolocation:</strong> Queries device latitude/longitude with high precision.</li>
+    <li><strong>Real-Time Area Resolution:</strong> Queries dual reverse geocoding services to display the exact farm name and locality (e.g. <em>"Sector 4B • Iowa Agro-Corridor"</em>).</li>
+    <li><strong>Layered Radar Map:</strong> Allows switching between Standard Street, High-Res Satellite Earth, and NDVI vegetation false-color layers.</li>
+  </ul>
+
+  <h3>4.3. Dual-Method Authentication Gateway (AuthModal.jsx)</h3>
+  <ul>
+    <li><strong>Gmail 1-Click Login:</strong> Instant Google Workspace authentication.</li>
+    <li><strong>Mobile Number + SMS OTP:</strong> Country code selector (🇮🇳 +91, 🇺🇸 +1, 🇬🇧 +44, etc.), phone number entry, and 4-digit verification code with countdown timer.</li>
+    <li><strong>Scanner Access Gating:</strong> The diagnostic scanner is locked until authenticated; logging in automatically unlocks and launches the scanner.</li>
+  </ul>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 5: REST API SPECIFICATION -->
+  <h2>5. REST API Specification Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Purpose</th>
+        <th>Sample Payload / Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/health</code></td>
+        <td>Health check & active DB status</td>
+        <td><code>{ status: "online", database: {...} }</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/auth/login</code></td>
+        <td>Authenticates User ID / Gmail</td>
+        <td><code>{ emailOrId, password } → { success, user }</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/auth/register</code></td>
+        <td>Registers new farm account</td>
+        <td><code>{ email, password, name, role }</code></td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/sensors</code></td>
+        <td>Retrieves sensor telemetry</td>
+        <td><code>{ fieldHealth, temperature, soilMoisture, ... }</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/sensors/update</code></td>
+        <td>Updates live sensor telemetry</td>
+        <td><code>{ ...sensorPayload } → { success, sensors }</code></td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/reports</code></td>
+        <td>Fetches diagnostic scan reports</td>
+        <td><code>[ { id, code, diseaseName, confidence, ... } ]</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/scan</code></td>
+        <td>Runs neural scan & creates report</td>
+        <td><code>{ sampleName, crop, previewUrl } → { report }</code></td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/alerts</code></td>
+        <td>Returns active outbreak alerts</td>
+        <td><code>[ { id, title, type, description } ]</code></td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/expert-review</code></td>
+        <td>Submits agronomist review ticket</td>
+        <td><code>{ reportId, notes } → { ticketId }</code></td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/download-zip</code></td>
+        <td>Streams full project ZIP archive</td>
+        <td>Binary stream (<code>application/zip</code>)</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/download-pdf</code></td>
+        <td>Streams the PDF technical manual</td>
+        <td>Binary stream (<code>application/pdf</code>)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 6: DIRECTORY STRUCTURE -->
+  <h2>6. Complete Project Directory Structure</h2>
+  <div class="code-block">crop-disease-platform/
+├── src/
+│   ├── components/
+│   │   ├── AIWorkplaceWidget.jsx    # Floating AI assistant corner widget
+│   │   ├── AnalysisReportScreen.jsx  # Detailed diagnostic report view
+│   │   ├── AuthModal.jsx            # Official Gmail & Mobile OTP login portal
+│   │   ├── BottomNav.jsx            # Sticky mobile bottom dock navigation
+│   │   ├── CommunityScreen.jsx      # Agronomist Q&A discussion forum
+│   │   ├── CropDiseaseView.jsx      # Disease encyclopedia with HD photos
+│   │   ├── DashboardScreen.jsx      # Primary dashboard with in-page login & telemetry
+│   │   ├── ExpertReviewModal.jsx    # Consultation ticket generator
+│   │   ├── FertilizersView.jsx      # N-P-K nutrient & fertilizer guide
+│   │   ├── FieldMapScreen.jsx       # Live GPS map with reverse geocoding
+│   │   ├── Header.jsx               # Top navigation bar with animated theme toggle
+│   │   ├── QuickScanModal.jsx       # AI leaf camera & image analysis modal
+│   │   ├── RegionalCropsView.jsx    # Regional crop recommendation catalog
+│   │   ├── SettingsModal.jsx        # Farm settings & data reset modal
+│   │   ├── Sidebar.jsx              # Desktop fixed navigation & drone HUD
+│   │   └── WeatherModal.jsx         # 7-day microclimate forecast modal
+│   ├── data/
+│   │   ├── agroscanData.js          # Core sensors, reports, and leaf samples
+│   │   └── cropData.js              # Disease taxonomy, fertilizers & regional data
+│   ├── utils/
+│   │   └── agroscanStore.js         # Reactive LocalStorage manager
+│   ├── App.jsx                      # Root component & theme controller
+│   └── main.jsx                     # React DOM entrypoint
+├── server.js                        # Node.js + Express REST API backend
+├── server_db.json                   # Persistent local JSON document database
+├── tailwind.config.js               # Tailwind CSS theme & dark mode config
+├── vite.config.js                   # Vite bundler configuration
+└── PROJECT_DOCUMENTATION.md         # Full project markdown documentation</div>
+
+  <!-- SECTION 7: STEP-BY-STEP EXECUTION -->
+  <h2>7. Installation, Setup & Execution</h2>
+  <p>To run the AgroScan Sentinel full-stack platform on any operating system:</p>
+
+  <div class="code-block"># 1. Install all dependencies
+npm install
+
+# 2. Start the Backend API Server (Port 5000)
+node server.js
+
+# 3. Start the Frontend Development Server (Port 3000)
+npm run dev -- --host --port 3000
+
+# 4. Open in your browser
+http://localhost:3000/</div>
+
+</body>
+</html>

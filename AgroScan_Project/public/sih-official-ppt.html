@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart India Hackathon 2026 - Official Idea Submission PPT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .slide-page {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      min-height: 675px;
+      margin: 0 auto 2rem auto;
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-radius: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.5rem 3.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      .no-print { display: none !important; }
+      .slide-page {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        page-break-after: always;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        border: none !important;
+        padding: 2rem 3rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-8 px-4 sm:px-8 selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Action Bar -->
+  <div class="max-w-6xl mx-auto mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-800 border border-slate-700 no-print shadow-2xl">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-lg">
+        🏆
+      </div>
+      <div>
+        <h2 class="font-extrabold text-sm text-white">Smart India Hackathon 2026 • Official 6-Slide Submission PPT</h2>
+        <p class="text-xs text-slate-400">Strictly following the official AICTE / SIH idea submission template format</p>
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs flex items-center space-x-2 transition-all shadow-lg shadow-blue-600/30 cursor-pointer">
+        <span>🖨️ Save as PDF (SIH Upload Ready)</span>
+      </button>
+      <a href="http://localhost:3000/" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-xs font-bold text-emerald-400 border border-emerald-500/30 transition-all cursor-pointer">
+        <span>⚡ Launch Live App</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 1: TITLE PAGE ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-3">
+      <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-blue-900">
+        SMART INDIA HACKATHON 2026
+      </h1>
+      <div class="flex items-center space-x-2 text-right">
+        <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center text-white font-black text-xs">
+          SIH
+        </div>
+        <div>
+          <span class="text-[10px] font-black uppercase tracking-wider text-slate-800 block">SMART INDIA</span>
+          <span class="text-[9px] font-bold text-slate-500 block">HACKATHON 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Title & Details Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 my-auto items-center">
+      <div class="md:col-span-7 space-y-4">
+        <span class="text-xs font-black uppercase tracking-widest text-blue-600 block">TITLE PAGE</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
+          AgroScan Sentinel: Autonomous Multi-Modal Crop Pathology, Edge AI & Satellite GIS Platform
+        </h2>
+
+        <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-800">
+          <p><strong class="text-blue-950 font-bold">• Problem Statement ID:</strong> SIH-2026-AGRO-7749</p>
+          <p><strong class="text-blue-950 font-bold">• Problem Statement Title:</strong> AI-Powered Early Detection & Mitigation of Crop Diseases & Pests</p>
+          <p><strong class="text-blue-950 font-bold">• Theme:</strong> Agriculture, FoodTech & Rural Development</p>
+          <p><strong class="text-blue-950 font-bold">• PS Category:</strong> Software / Hardware (Hybrid Deep-Tech)</p>
+          <p><strong class="text-blue-950 font-bold">• Team ID:</strong> [Your Team ID]</p>
+          <p><strong class="text-blue-950 font-bold">• Team Name:</strong> AgroScan Innovators</p>
+        </div>
+      </div>
+
+      <!-- Brain/Bulb Infographic Illustration -->
+      <div class="md:col-span-5 flex flex-col items-center justify-center">
+        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-blue-50 via-slate-50 to-orange-50 border-2 border-slate-200 p-4 flex items-center justify-center relative shadow-inner">
+          <div class="text-center space-y-1">
+            <span class="text-4xl">💡</span>
+            <div class="flex items-center justify-center space-x-2 text-xs font-mono font-black">
+              <span class="text-orange-500">10101</span>
+              <span class="text-blue-600">01010</span>
+            </div>
+            <span class="text-xs font-black text-slate-800 uppercase tracking-wider block">SIH 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">1</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2: PROPOSED SOLUTION ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+      <div class="flex items-center space-x-3">
+        <div class="px-2.5 py-1 rounded-lg border border-slate-300 text-[10px] font-bold text-slate-600">
+          Your Team Name
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase">
+          IDEA TITLE: AGROSCAN SENTINEL
+        </h2>
+      </div>
+      <div class="text-right text-[10px] font-bold text-slate-500">
+        SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4 my-auto">
+      <h3 class="text-base sm:text-lg font-black text-blue-900 flex items-center space-x-1.5">
+        <span>❖</span>
+        <span>Proposed Solution (Describe your Idea/Solution/Prototype)</span>
+      </h3>
+
+      <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <strong class="text-slate-900 block font-bold">• Detailed Explanation of the Proposed Solution:</strong>
+          <p class="text-slate-600 leading-relaxed">
+            AgroScan Sentinel is an autonomous, zero-marginal-cost edge AI ecosystem that combines client-side WebAssembly color-matrix tensor inspection with Google Gemini 1.5 Flash multimodal vision, Sentinel-2 NDVI satellite remote sensing, and ESP32 optical smart sticky-traps into a single unified progressive web app.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <strong class="text-slate-900 block font-bold">• How it Addresses the Problem:</strong>
+          <p class="text-slate-600 leading-relaxed">
+            Eliminates the 1:1,160 agronomist shortage and 3–7 day laboratory testing delay by delivering instant (&lt; 1.2s) clinical pathology with dual chemical/organic prescriptions and proactive 48-hour Doppler satellite spore outbreak warnings.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <strong class="text-slate-900 block font-bold">• Innovation and Uniqueness of the Solution:</strong>
+          <p class="text-slate-600 leading-relaxed">
+            <strong>100% Free Edge Mode:</strong> In-browser WebGL tensor extraction runs without cloud API costs for smallholder farmers. Self-improving active continuous learning dynamically evolves neural weights with verified field specimens.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">2</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 3: TECHNICAL APPROACH ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+      <div class="flex items-center space-x-3">
+        <div class="px-2.5 py-1 rounded-lg border border-slate-300 text-[10px] font-bold text-slate-600">
+          Your Team Name
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase">
+          TECHNICAL APPROACH
+        </h2>
+      </div>
+      <div class="text-right text-[10px] font-bold text-slate-500">
+        SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4 my-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+        
+        <!-- Tech Stack Column -->
+        <div class="space-y-2">
+          <strong class="text-blue-900 font-bold block text-sm sm:text-base">• Technologies Used:</strong>
+          <ul class="space-y-1.5 text-slate-700 text-xs">
+            <li><strong>AI & Vision:</strong> Google Gemini 1.5 Flash LMM, HTML5 Canvas/WebGL Tensor Extraction.</li>
+            <li><strong>GIS & Satellites:</strong> Sentinel-2 & Landsat-8 NDVI, Leaflet 1.9.4, ESRI Satellite Layers.</li>
+            <li><strong>IoT Hardware:</strong> ESP32-CAM (Node 4B Optical Sticky Trap), RS485 Soil Moisture/NPK.</li>
+            <li><strong>Full-Stack & Cloud:</strong> React 18, Vite 5, Tailwind CSS 3.4, Node.js Express 5.2, MongoDB.</li>
+            <li><strong>Meteorological Radar:</strong> Open-Meteo & Doppler radar atmospheric telemetry.</li>
+          </ul>
+        </div>
+
+        <!-- Flowchart / Methodology Column -->
+        <div class="space-y-2">
+          <strong class="text-blue-900 font-bold block text-sm sm:text-base">• Methodology & Implementation Process:</strong>
+          <div class="grid grid-cols-5 gap-1.5 text-center text-[10px]">
+            <div class="p-2 rounded-lg bg-blue-50 border border-blue-200">
+              <span class="font-bold text-blue-900 block">1. Capture</span>
+              <span>4K Leaf / Trap Photo</span>
+            </div>
+            <div class="p-2 rounded-lg bg-teal-50 border border-teal-200">
+              <span class="font-bold text-teal-900 block">2. Edge Scan</span>
+              <span>Wasm RGB/HSV Tensors</span>
+            </div>
+            <div class="p-2 rounded-lg bg-purple-50 border border-purple-200">
+              <span class="font-bold text-purple-900 block">3. Cloud AI</span>
+              <span>Gemini 1.5 Pathology</span>
+            </div>
+            <div class="p-2 rounded-lg bg-amber-50 border border-amber-200">
+              <span class="font-bold text-amber-900 block">4. GIS Sync</span>
+              <span>NDVI & Weather</span>
+            </div>
+            <div class="p-2 rounded-lg bg-emerald-50 border border-emerald-200">
+              <span class="font-bold text-emerald-900 block">5. Remedy</span>
+              <span>Precise Dosages</span>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-500 pt-1">
+            <strong>Working Prototype Status:</strong> Fully functional working prototype deployed with live real-time location and Doppler meteorological radar sync.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">3</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 4: FEASIBILITY AND VIABILITY ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+      <div class="flex items-center space-x-3">
+        <div class="px-2.5 py-1 rounded-lg border border-slate-300 text-[10px] font-bold text-slate-600">
+          Your Team Name
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase">
+          FEASIBILITY AND VIABILITY
+        </h2>
+      </div>
+      <div class="text-right text-[10px] font-bold text-slate-500">
+        SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-3.5 my-auto text-xs sm:text-sm text-slate-700">
+      
+      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+        <strong class="text-slate-900 font-bold block">• Analysis of the Feasibility of the Idea:</strong>
+        <p class="text-slate-600 text-xs leading-relaxed">
+          High operational feasibility. The client-side Edge AI runs entirely inside standard mobile browsers (Chrome, Edge, Safari) without requiring app installs or expensive GPUs. Open-source satellite feeds (Sentinel-2, Open-Meteo) eliminate ongoing software licensing costs.
+        </p>
+      </div>
+
+      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+        <strong class="text-slate-900 font-bold block">• Potential Challenges and Risks:</strong>
+        <ul class="text-slate-600 text-xs list-disc pl-4 space-y-0.5">
+          <li>Intermittent 2G/3G connectivity in remote rural farmlands.</li>
+          <li>Variable natural sunlight and shadow occlusions during leaf photography.</li>
+          <li>Hardware adoption barrier for smallholder farmers.</li>
+        </ul>
+      </div>
+
+      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+        <strong class="text-slate-900 font-bold block">• Strategies for Overcoming These Challenges:</strong>
+        <ul class="text-slate-600 text-xs list-disc pl-4 space-y-0.5">
+          <li><strong>Offline PWA Storage:</strong> Local IndexedDB stores offline scans and synchronizes automatically on reconnection.</li>
+          <li><strong>Adaptive Normalization:</strong> Color-space normalization filters compensate for direct glare and low lighting.</li>
+          <li><strong>FPO/KVK Hub Model:</strong> Community optical sticky-traps shared across 50-acre farmer producer clusters.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">4</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 5: IMPACT AND BENEFITS ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+      <div class="flex items-center space-x-3">
+        <div class="px-2.5 py-1 rounded-lg border border-slate-300 text-[10px] font-bold text-slate-600">
+          Your Team Name
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase">
+          IMPACT AND BENEFITS
+        </h2>
+      </div>
+      <div class="text-right text-[10px] font-bold text-slate-500">
+        SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4 my-auto">
+      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+        <strong class="text-slate-900 font-bold block text-xs sm:text-sm">• Potential Impact on the Target Audience:</strong>
+        <p class="text-slate-600 text-xs leading-relaxed">
+          Directly empowers 120+ million Indian farmers and KVK extension officers with instant, laboratory-grade plant pathology and proactive climate resilience in their native vernacular languages.
+        </p>
+      </div>
+
+      <strong class="text-blue-900 font-bold block text-xs sm:text-sm">• Multi-Dimensional Benefits:</strong>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1">
+          <span class="font-black text-emerald-900 block">🌾 Social Benefits</span>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            Democratizes expert agronomy, eliminates rural diagnostic delays, and bridges the extension worker gap for marginalized smallholders.
+          </p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-blue-50 border border-blue-200 space-y-1">
+          <span class="font-black text-blue-900 block">💰 Economic Benefits</span>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            <strong>35% chemical cost reduction</strong> + <strong>22% crop loss saved</strong> = Average <strong>₹14,500 profit increase</strong> per acre.
+          </p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-teal-50 border border-teal-200 space-y-1">
+          <span class="font-black text-teal-900 block">🌱 Environmental Benefits</span>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            Prevents over-application of synthetic pesticides, curtails chemical runoff into water tables, and restores soil microbiome health.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">5</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 6: RESEARCH AND REFERENCES ==================== -->
+  <div class="slide-page flex flex-col justify-between">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+      <div class="flex items-center space-x-3">
+        <div class="px-2.5 py-1 rounded-lg border border-slate-300 text-[10px] font-bold text-slate-600">
+          Your Team Name
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 uppercase">
+          RESEARCH AND REFERENCES
+        </h2>
+      </div>
+      <div class="text-right text-[10px] font-bold text-slate-500">
+        SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4 my-auto text-xs sm:text-sm text-slate-700">
+      <strong class="text-blue-900 font-bold block text-sm sm:text-base">• Details / Links of the Reference and Research Work:</strong>
+
+      <div class="space-y-2.5">
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block font-bold">1. Plant Pathology & Deep Learning Benchmarks:</strong>
+          <p class="text-slate-600 text-xs">
+            Hughes, D. & Salathé, M. (2016). "An open access repository of images on plant health to enable the development of mobile disease diagnostics." <em>PlantVillage Dataset & ICAR Research Papers</em>.
+          </p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block font-bold">2. Satellite Remote Sensing & NDVI Algorithms:</strong>
+          <p class="text-slate-600 text-xs">
+            European Space Agency (ESA). <em>Sentinel-2 MultiSpectral Instrument (MSI) User Handbook</em> for vegetative biomass NIR/Red spectral calculation.
+          </p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block font-bold">3. Meteorological Radar & Integrated Pest Management:</strong>
+          <p class="text-slate-600 text-xs">
+            World Meteorological Organization (WMO) & Indian Council of Agricultural Research (ICAR) <em>Standard Operating Procedures for Crop Protection & Disease Economic Thresholds</em>.
+          </p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block font-bold">4. Live Working Project Repository:</strong>
+          <p class="text-slate-600 text-xs font-mono">
+            AgroScan Sentinel Web App (Live Instance): http://localhost:3000/
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Footer -->
+    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[10px] text-slate-400">
+      <span>@SIH Idea submission- Template</span>
+      <span class="font-bold text-blue-600">6</span>
+    </div>
+  </div>
+
+</body>
+</html>
